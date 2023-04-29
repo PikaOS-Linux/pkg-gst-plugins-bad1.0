@@ -1,0 +1,3 @@
+02_opencv-data-path.patch
+pcfile-requires-plugins-good
+Skip-failing-tests.patch

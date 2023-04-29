@@ -1,0 +1,15 @@
+usr/lib/*/libgstadaptivedemux-1.0.so.*
+usr/lib/*/libgstbadaudio-1.0.so.*
+usr/lib/*/libgstinsertbin-1.0.so.*
+usr/lib/*/libgstcodecparsers-1.0.so.*
+usr/lib/*/libgstcodecs-1.0.so.*
+usr/lib/*/libgstmpegts-1.0.so.*
+usr/lib/*/libgstplay-1.0.so.*
+usr/lib/*/libgstplayer-1.0.so.*
+usr/lib/*/libgsturidownloader-1.0.so.*
+usr/lib/*/libgstisoff-1.0.so.*
+usr/lib/*/libgstsctp-1.0.so.*
+usr/lib/*/libgstwebrtc-1.0.so.*
+usr/lib/*/libgstwebrtcnice-1.0.so.*
+usr/lib/*/libgsttranscoder-1.0.so.*
+usr/share/gstreamer-1.0/encoding-profiles
