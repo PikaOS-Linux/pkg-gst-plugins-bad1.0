@@ -216,6 +216,7 @@ Architecture: any
 Multi-Arch: same
 Depends: ${misc:Depends},
          ${shlibs:Depends},
+         gstreamer1.0-plugins-bad
 Conflicts: pitivi (<< 0.9999)
 Description: GStreamer libraries from the "bad" set
  GStreamer is a streaming media framework, based on graphs of filters

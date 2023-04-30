@@ -91,4 +91,11 @@ override_dh_install:
 		$(CURDIR)/debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/libgstphotography* \
 		$(CURDIR)/debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/gstreamer-1.0/libgstjpegformat.so \
 		$(CURDIR)/debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/gstreamer-1.0/libgstcamerabin.so
-		dh_install
+		dh_install -xgstreamer1.0-opencv
+		dh_install -xlibgstreamer-opencv1.0-0
+		dh_install -xgstreamer1.0-plugins-bad-apps
+		dh_install -xgir1.2-gst-plugins-bad-1.0
+		dh_install -xlibgstreamer-plugins-bad1.0-dev
+		dh_install -xlibgstreamer-plugins-bad1.0-0
+		dh_install -xgstreamer1.0-plugins-bad
+		
