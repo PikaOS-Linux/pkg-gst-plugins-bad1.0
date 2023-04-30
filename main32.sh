@@ -13,12 +13,15 @@ cp -rvf ./debian ./gst-plugins-bad1.0/
 cd ./gst-plugins-bad1.0
 
 # Get build deps
-apt-get install build-essential -y
-apt-get install crossbuild-essential-i386 lib32gcc-11-dev -y
-apt-get build-dep ./ -y -a i386
+
+apt-get install pbuilder debootstrap devscripts
 
 # Build package
-dpkg-buildpackage -a i386
+
+debuild -S sa -d
+
+DIST=lunar ARCH=i386 pbuilder create
+DIST=lunar ARCH=i386 pdebuild
 
 # Move the debs to output
 cd ../
