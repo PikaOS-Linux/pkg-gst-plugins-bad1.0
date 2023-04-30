@@ -16,9 +16,9 @@ cd ./gst-plugins-bad1.0
 
 apt-get install -y pbuilder debootstrap devscripts debhelper sbuild debhelper ubuntu-dev-tools piuparts
 
-ARG USERNAME=gitboi
-ARG USER_UID=1000
-ARG USER_GID=$USER_UID
+USERNAME=gitboi
+USER_UID=1000
+USER_GID=$USER_UID
 
 CUR_DIR=$(pwd)
 # Create the user
@@ -28,4 +28,4 @@ groupadd --gid $USER_GID $USERNAME \
     && apt-get install -y sudo \
     && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME
-su $USERNAME -c $CUR_DIR/sbuild32.sh
+su $USERNAME -c ./sbuild32.sh
