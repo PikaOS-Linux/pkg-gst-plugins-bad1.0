@@ -17,7 +17,7 @@ cd ./gst-plugins-bad1.0
 apt-get install -y pbuilder debootstrap devscripts debhelper sbuild debhelper ubuntu-dev-tools piuparts
 
 USERNAME=gitboi
-USER_UID=1000
+USER_UID=1001
 USER_GID=$USER_UID
 
 CUR_DIR=$(pwd)
