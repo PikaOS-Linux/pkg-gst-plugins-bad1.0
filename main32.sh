@@ -19,11 +19,12 @@ apt-get install -y pbuilder debootstrap devscripts debhelper
 # Build package
 apt-get build-dep -y ./
 debuild -S -uc -us
-
+cd ../
+ls
+echo 'starting pbuilder'
 DIST=lunar ARCH=i386 pbuilder create
 DIST=lunar ARCH=i386 pbuilder build ./*.dsc
 
 # Move the debs to output
-cd ../
 mkdir -p ./output
 mv ./*.deb ./output/
