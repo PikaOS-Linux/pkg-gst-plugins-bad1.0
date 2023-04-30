@@ -21,10 +21,11 @@ apt-get build-dep -y ./
 debuild -S -uc -us
 cd ../
 ls
-echo 'starting pbuilder'
+echo 'phase1'
 DIST=lunar ARCH=i386 pbuilder create --distribution lunar --architecture i386
-echo 'starting build'
-DIST=lunar ARCH=i386 pbuilder build ./*.dsc --distribution lunar --architecture i386
+mk-sbuild lunar --arch=i386
+echo 'phase2'
+sbuild -d lunar-i386 ./*.dsc
 
 # Move the debs to output
 mkdir -p ./output
