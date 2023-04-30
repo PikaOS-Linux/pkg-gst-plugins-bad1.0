@@ -40,14 +40,12 @@ override_dh_gencontrol:
 endif
 
 conf_flags = -Dpackage-name=$(GST_PACKAGE_NAME) -Dpackage-origin=$(GST_PACKAGE_ORIGIN)
-conf_flags += -Dauto_features=enabled -Ddoc=disabled -Dgpl=enabled
+conf_flags += -Dauto_features=enabled -Ddoc=disabled -Dgpl=enabled -Damfcodec=enabled -Dfdkaac=enabled -Dladspa=enabled -Dvulkan=enabled
 # Not available in Debian yet
-conf_flags += -Davtp=disabled -Dfaac=disabled -Dgs=disabled -Diqa=disabled -Disac=disabled -Dmagicleap=disabled
-conf_flags += -Dmicrodns=disabled -Donnx=disabled -Dopensles=disabled -Dsvthevcenc=disabled -Dtinyalsa=disabled
+#conf_flags += -Davtp=disabled -Dfaac=disabled -Dgs=disabled -Diqa=disabled -Disac=disabled -Dmagicleap=disabled
+#conf_flags += -Dmicrodns=disabled -Donnx=disabled -Dopensles=disabled -Dsvthevcenc=disabled -Dtinyalsa=disabled
 # Only available on Windows
-conf_flags += -Damfcodec=disabled -Ddirectshow=disabled -Dwasapi=disabled -Dwasapi2=disabled
-# In non-free currently
-conf_flags += -Dfdkaac=disabled
+conf_flags += -Ddirectshow=disabled -Dwasapi=disabled -Dwasapi2=disabled
 
 ifeq (,$(filter $(DEB_HOST_ARCH),amd64 arm64 armel armhf mips64el mipsel ppc64el s390x alpha hppa hurd-i386 m68k powerpc ppc64 riscv64))
 conf_flags += -Dopencv=disabled -Dzxing=disabled
@@ -71,15 +69,9 @@ ifeq ($(DEB_HOST_ARCH_OS),hurd)
 conf_flags += -Dresindvd=disabled
 endif
 
-# Ubuntu doesn't have wpewebkit
-ifeq ($(DISTRO),"Ubuntu")
-conf_flags += -Dwpe=disabled
-endif
-
 # Not available on Ubuntu i386 currently
 ifeq ($(DEB_HOST_ARCH),i386)
-conf_flags += -Ddirectfb=disabled -Dladspa=disabled -Dneon=disabled -Dopenaptx=disabled -Dopenh264=disabled \
-              -Dopenni2=disabled -Dqroverlay=disabled -Dvulkan=disabled
+#conf_flags += -Ddirectfb=disabled  -Dneon=disabled -Dopenaptx=disabled -Dopenni2=disabled -Dqroverlay=disabled 
 endif
 
 %:
