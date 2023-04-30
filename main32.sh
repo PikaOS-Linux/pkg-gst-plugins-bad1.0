@@ -22,9 +22,9 @@ debuild -S -uc -us
 cd ../
 ls
 echo 'starting pbuilder'
-DIST=lunar ARCH=i386 pbuilder --distribution lunar --architecture i386 create
+DIST=lunar ARCH=i386 pbuilder create --distribution lunar --architecture i386
 echo 'starting build'
-DIST=lunar ARCH=i386 pbuilder --distribution lunar --architecture i386 build ./*.dsc
+DIST=lunar ARCH=i386 pbuilder build ./*.dsc --distribution lunar --architecture i386
 
 # Move the debs to output
 mkdir -p ./output
