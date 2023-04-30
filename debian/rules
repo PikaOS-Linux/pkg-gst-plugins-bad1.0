@@ -124,3 +124,4 @@ override_dh_install:
 		mv $(CURDIR)/debian/tmp/usr/share/locale $(CURDIR)/debian/gstreamer1.0-plugins-bad/usr/share/
 		mv $(CURDIR)/debian/tmp/usr/share/gstreamer-1.0/presets $(CURDIR)/debian/gstreamer1.0-plugins-bad/usr/share/gstreamer-1.0/
 		#
+		tree $(CURDIR)/debian/tmp

@@ -13,6 +13,7 @@ cd ./gst-plugins-bad1.0
 
 # Get build deps
 apt-get build-dep ./ -y
+apt-get install tree -y
 
 # Build package
 dpkg-buildpackage
