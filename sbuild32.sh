@@ -1,7 +1,7 @@
 
 echo 'phase1'
 touch ~/.sbuildrc
-mk-sbuild lunar --arch=i386 --debootstrap-include=eatmydata
+mk-sbuild lunar --arch=i386 --debootstrap-include=libeatmydata1
 echo 'phase2'
 sbuild -d lunar-i386 ./*.dsc
 
