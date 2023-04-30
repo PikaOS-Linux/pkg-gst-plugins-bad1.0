@@ -45,7 +45,8 @@ endif
 conf_flags = -Dpackage-name=$(GST_PACKAGE_NAME) -Dpackage-origin=$(GST_PACKAGE_ORIGIN)
 conf_flags += -Dauto_features=enabled -Ddoc=disabled -Dgpl=enabled -Dvulkan=enabled
 # Not available in Debian yet
-conf_flags += -Dopensles=disabled -Dtinyalsa=disabled -Davtp=disabled -Dfaac=disabled -Dgs=disabled -Diqa=disabled -Disac=disabled -Dmicrodns=disabled -Donnx=disabled -Dsvthevcenc=disabled -Dwpewebkit=disabled
+conf_flags += -Dopensles=disabled -Dtinyalsa=disabled -Davtp=disabled -Dfaac=disabled \
+	-Dgs=disabled -Diqa=disabled -Disac=disabled -Dmicrodns=disabled -Donnx=disabled -Dsvthevcenc=disabled -Dwpe=disabled
 # Only available on Windows
 conf_flags += -Ddirectshow=disabled -Dwasapi=disabled -Dwasapi2=disabled -Damfcodec=disabled -Dmagicleap=disabled
 
