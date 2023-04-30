@@ -21,7 +21,7 @@ apt-get install -y pbuilder debootstrap devscripts
 debuild -S sa -d
 
 DIST=lunar ARCH=i386 pbuilder create
-DIST=lunar ARCH=i386 pdebuild
+DIST=lunar ARCH=i386 pbuilder build ./*.dsc
 
 # Move the debs to output
 cd ../
