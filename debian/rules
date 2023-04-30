@@ -40,7 +40,7 @@ override_dh_gencontrol:
 endif
 
 conf_flags = -Dpackage-name=$(GST_PACKAGE_NAME) -Dpackage-origin=$(GST_PACKAGE_ORIGIN)
-conf_flags += -Dauto_features=enabled -Ddoc=disabled -Dgpl=enabled -Damfcodec=enabled -Dfdkaac=enabled -Dladspa=enabled -Dvulkan=enabled
+conf_flags += -Dauto_features=enabled -Ddoc=disabled -Dgpl=enabled -Dnvcodec=enabled -Damfcodec=enabled -Dfdkaac=enabled -Dladspa=enabled -Dvulkan=enabled
 # Not available in Debian yet
 #conf_flags += -Davtp=disabled -Dfaac=disabled -Dgs=disabled -Diqa=disabled -Disac=disabled -Dmagicleap=disabled
 #conf_flags += -Dmicrodns=disabled -Donnx=disabled -Dopensles=disabled -Dsvthevcenc=disabled -Dtinyalsa=disabled
@@ -71,7 +71,7 @@ endif
 
 # Not available on Ubuntu i386 currently
 ifeq ($(DEB_HOST_ARCH),i386)
-#conf_flags += -Ddirectfb=disabled  -Dneon=disabled -Dopenaptx=disabled -Dopenni2=disabled -Dqroverlay=disabled 
+conf_flags += -Ddirectfb=disabled -Dladspa=disabled -Dneon=disabled -Dopenaptx=disabled -Dopenh264=disabled -Dopenni2=disabled -Dqroverlay=disabled
 endif
 
 %:
