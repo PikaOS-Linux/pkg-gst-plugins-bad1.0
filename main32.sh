@@ -22,7 +22,6 @@ debuild -S -uc -us
 cd ../
 ls
 echo 'phase1'
-DIST=lunar ARCH=i386 pbuilder create --distribution lunar --architecture i386
 mk-sbuild lunar --arch=i386
 echo 'phase2'
 sbuild -d lunar-i386 ./*.dsc
