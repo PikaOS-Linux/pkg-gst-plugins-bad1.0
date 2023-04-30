@@ -6,4 +6,4 @@ echo 'phase2'
 sbuild -d lunar-i386 ./*.dsc
 
 # Move the debs to outputmkdir -p ./output
-mv ./*.deb ./output/
+sudo mv ./*.deb ./output/
