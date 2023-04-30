@@ -17,8 +17,8 @@ cd ./gst-plugins-bad1.0
 apt-get install -y pbuilder debootstrap devscripts debhelper
 
 # Build package
-
-debuild -S -sa -d
+apt-get build-dep -y ./
+debuild -S -sa
 
 DIST=lunar ARCH=i386 pbuilder create
 DIST=lunar ARCH=i386 pbuilder build ./*.dsc
