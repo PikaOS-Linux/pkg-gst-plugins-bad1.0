@@ -22,6 +22,7 @@ debuild -S -uc -us
 cd ../
 ls
 echo 'phase1'
+touch ~/.sbuildrc
 mk-sbuild lunar --arch=i386
 echo 'phase2'
 sbuild -d lunar-i386 ./*.dsc
