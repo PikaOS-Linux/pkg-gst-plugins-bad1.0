@@ -14,7 +14,7 @@ cd ./gst-plugins-bad1.0
 
 # Get build deps
 
-apt-get install pbuilder debootstrap devscripts
+apt-get install -y pbuilder debootstrap devscripts
 
 # Build package
 
