@@ -110,6 +110,7 @@ Build-Depends: debhelper,
                gir1.2-gst-plugins-base-1.0,
                gir1.2-gstreamer-1.0,
                libopenh264-dev [!i386],
+               libfdk-acc-dev [!i386],
                libffmpeg-amf-dev [amd64],
                libffmpeg-nvenc-dev [amd64],
 Build-Conflicts: libopenaptx-dev

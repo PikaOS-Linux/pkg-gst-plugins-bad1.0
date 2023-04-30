@@ -48,7 +48,7 @@ conf_flags += -Dauto_features=enabled -Ddoc=disabled -Dgpl=enabled -Dvulkan=enab
 #conf_flags += -Davtp=disabled -Dfaac=disabled -Dgs=disabled -Diqa=disabled -Disac=disabled -Dmagicleap=disabled
 #conf_flags += -Dmicrodns=disabled -Donnx=disabled -Dopensles=disabled -Dsvthevcenc=disabled -Dtinyalsa=disabled
 # Only available on Windows
- conf_flags += -Ddirectshow=disabled -Dwasapi=disabled -Dwasapi2=disabled -Damfcodec=disabled
+ conf_flags += -Ddirectshow=disabled -Dwasapi=disabled -Dwasapi2=disabled -Damfcodec=disabled -Dmagicleap=disabled
 
 ifeq ($(DEB_HOST_ARCH),amd64)
 conf_flags += -Dfdkaac=enabled -Dladspa=enabled -Dnvcodec=enabled -Dmsdk=enabled -Dqsv=enabled
