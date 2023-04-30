@@ -91,37 +91,43 @@ override_dh_install:
 		$(CURDIR)/debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/libgstphotography* \
 		$(CURDIR)/debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/gstreamer-1.0/libgstjpegformat.so \
 		$(CURDIR)/debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/gstreamer-1.0/libgstcamerabin.so
-		#
-		mkdir -p $(CURDIR)/debian/gstreamer1.0-opencv/usr/lib/$(DEB_HOST_MULTIARCH)/gstreamer-1.0/
-		mv $(CURDIR)/debian/tmp/usr/lib/*/gstreamer-1.0/libgstopencv.so $(CURDIR)/debian/gstreamer1.0-opencv/usr/lib/$(DEB_HOST_MULTIARCH)/gstreamer-1.0/
-		#
-		mkdir -p $(CURDIR)/debian/libgstreamer-opencv1.0-0/usr/lib/$(DEB_HOST_MULTIARCH)/
-		mv $(CURDIR)/debian/tmp/usr/lib/*/libgstopencv-1.0.so.* $(CURDIR)/debian/libgstreamer-opencv1.0-0/usr/lib/$(DEB_HOST_MULTIARCH)/
-		#
-		mkdir -p $(CURDIR)/debian/gstreamer1.0-plugins-bad-apps/usr/bin/
-		mv $(CURDIR)/debian/tmp/usr/bin/gst-transcoder-1.0 $(CURDIR)/debian/gstreamer1.0-plugins-bad-apps/usr/bin/
-		#
-		mkdir -p $(CURDIR)/debian/gir1.2-gst-plugins-bad-1.0/usr/lib/$(DEB_HOST_MULTIARCH)/
-		mv $(CURDIR)/debian/tmp/usr/lib/*/girepository-* $(CURDIR)/debian/gir1.2-gst-plugins-bad-1.0/usr/lib/$(DEB_HOST_MULTIARCH)/
-		#
-		mkdir -p $(CURDIR)/debian/libgstreamer-plugins-bad1.0-dev/usr/include
-		mkdir -p $(CURDIR)/debian/libgstreamer-plugins-bad1.0-dev/usr/lib/$(DEB_HOST_MULTIARCH)/pkgconfig
-		mkdir -p $(CURDIR)/debian/libgstreamer-plugins-bad1.0-dev/usr/share/
-		mv $(CURDIR)/debian/tmp/usr/include $(CURDIR)/debian/libgstreamer-plugins-bad1.0-dev/usr/
-		mv $(CURDIR)/debian/tmp/usr/lib/*/pkgconfig $(CURDIR)/debian/libgstreamer-plugins-bad1.0-dev/usr/$(DEB_HOST_MULTIARCH)/
-		mv $(CURDIR)/debian/tmp/usr/lib/*/*.so $(CURDIR)/debian/libgstreamer-plugins-bad1.0-dev/usr/$(DEB_HOST_MULTIARCH)/
-		mv $(CURDIR)/debian/tmp/usr/share/gir-* $(CURDIR)/debian/libgstreamer-plugins-bad1.0-dev/usr/share/
-		#
-		mkdir -p $(CURDIR)/debian/libgstreamer-plugins-bad1.0-0/$(DEB_HOST_MULTIARCH)
-		mkdir -p $(CURDIR)/debian/libgstreamer-plugins-bad1.0-0/usr/share/gstreamer-1.0
-		mv $(CURDIR)/debian/tmp/usr/lib/*/*.so.* $(CURDIR)/debian/libgstreamer-plugins-bad1.0-0/$(DEB_HOST_MULTIARCH)/
-		mv $(CURDIR)/debian/tmp/usr/share/gstreamer-1.0/encoding-profiles $(CURDIR)/debian/libgstreamer-plugins-bad1.0-0/usr/share/gstreamer-1.0/
-		#
-		mkdir -p $(CURDIR)/debian/gstreamer1.0-plugins-bad/usr/lib/$(DEB_HOST_MULTIARCH)/gstreamer-1.0/
-		mkdir -p $(CURDIR)/debian/gstreamer1.0-plugins-bad/usr/share/
-		mkdir -p $(CURDIR)/debian/gstreamer1.0-plugins-bad/usr/share/gstreamer-1.0/
-		mv $(CURDIR)/debian/tmp/usr/lib/*/gstreamer-1.0/* $(CURDIR)/debian/gstreamer1.0-plugins-bad/usr/share/gstreamer-1.0/
-		mv $(CURDIR)/debian/tmp/usr/share/locale $(CURDIR)/debian/gstreamer1.0-plugins-bad/usr/share/
-		mv $(CURDIR)/debian/tmp/usr/share/gstreamer-1.0/presets $(CURDIR)/debian/gstreamer1.0-plugins-bad/usr/share/gstreamer-1.0/
-		#
-		tree $(CURDIR)/debian/tmp
+	#
+	mkdir -p $(CURDIR)/debian/gstreamer1.0-opencv/usr/lib/$(DEB_HOST_MULTIARCH)/gstreamer-1.0/
+	mv $(CURDIR)/debian/tmp/usr/lib/*/gstreamer-1.0/libgstopencv.so $(CURDIR)/debian/gstreamer1.0-opencv/usr/lib/$(DEB_HOST_MULTIARCH)/gstreamer-1.0/
+	#
+	mkdir -p $(CURDIR)/debian/libgstreamer-opencv1.0-0/usr/lib/$(DEB_HOST_MULTIARCH)/
+	mv $(CURDIR)/debian/tmp/usr/lib/*/libgstopencv-1.0.so.* $(CURDIR)/debian/libgstreamer-opencv1.0-0/usr/lib/$(DEB_HOST_MULTIARCH)/
+	#
+	mkdir -p $(CURDIR)/debian/gstreamer1.0-plugins-bad-apps/usr/bin/
+	mv $(CURDIR)/debian/tmp/usr/bin/gst-transcoder-1.0 $(CURDIR)/debian/gstreamer1.0-plugins-bad-apps/usr/bin/
+	#
+	mkdir -p $(CURDIR)/debian/gir1.2-gst-plugins-bad-1.0/usr/lib/$(DEB_HOST_MULTIARCH)/
+	mv $(CURDIR)/debian/tmp/usr/lib/*/girepository-* $(CURDIR)/debian/gir1.2-gst-plugins-bad-1.0/usr/lib/$(DEB_HOST_MULTIARCH)/
+	#
+	mkdir -p $(CURDIR)/debian/libgstreamer-plugins-bad1.0-dev/usr/include
+	mkdir -p $(CURDIR)/debian/libgstreamer-plugins-bad1.0-dev/usr/lib/$(DEB_HOST_MULTIARCH)/pkgconfig
+	mkdir -p $(CURDIR)/debian/libgstreamer-plugins-bad1.0-dev/usr/share/
+	mv $(CURDIR)/debian/tmp/usr/include $(CURDIR)/debian/libgstreamer-plugins-bad1.0-dev/usr/
+	mv $(CURDIR)/debian/tmp/usr/lib/*/pkgconfig $(CURDIR)/debian/libgstreamer-plugins-bad1.0-dev/usr/$(DEB_HOST_MULTIARCH)/
+	mv $(CURDIR)/debian/tmp/usr/lib/*/*.so $(CURDIR)/debian/libgstreamer-plugins-bad1.0-dev/usr/$(DEB_HOST_MULTIARCH)/
+	mv $(CURDIR)/debian/tmp/usr/share/gir-* $(CURDIR)/debian/libgstreamer-plugins-bad1.0-dev/usr/share/
+	#
+	mkdir -p $(CURDIR)/debian/libgstreamer-plugins-bad1.0-0/$(DEB_HOST_MULTIARCH)
+	mkdir -p $(CURDIR)/debian/libgstreamer-plugins-bad1.0-0/usr/share/gstreamer-1.0
+	mv $(CURDIR)/debian/tmp/usr/lib/*/*.so.* $(CURDIR)/debian/libgstreamer-plugins-bad1.0-0/$(DEB_HOST_MULTIARCH)/
+	mv $(CURDIR)/debian/tmp/usr/share/gstreamer-1.0/encoding-profiles $(CURDIR)/debian/libgstreamer-plugins-bad1.0-0/usr/share/gstreamer-1.0/
+	#
+	mkdir -p $(CURDIR)/debian/gstreamer1.0-plugins-bad/usr/lib/$(DEB_HOST_MULTIARCH)/gstreamer-1.0/
+	mkdir -p $(CURDIR)/debian/gstreamer1.0-plugins-bad/usr/share/
+	mkdir -p $(CURDIR)/debian/gstreamer1.0-plugins-bad/usr/share/gstreamer-1.0/
+	mv $(CURDIR)/debian/tmp/usr/lib/*/gstreamer-1.0/* $(CURDIR)/debian/gstreamer1.0-plugins-bad/usr/share/gstreamer-1.0/
+	mv $(CURDIR)/debian/tmp/usr/share/locale $(CURDIR)/debian/gstreamer1.0-plugins-bad/usr/share/
+	mv $(CURDIR)/debian/tmp/usr/share/gstreamer-1.0/presets $(CURDIR)/debian/gstreamer1.0-plugins-bad/usr/share/gstreamer-1.0/
+	#
+	mkdir -p $(CURDIR)/fake-home
+	HOME=$(CURDIR)/fake-home \
+	LD_LIBRARY_PATH=debian/libgstreamer-plugins-bad1.0-0/usr/lib/$(DEB_HOST_MULTIARCH):debian/libgstreamer-opencv1.0-0/usr/lib/$(DEB_HOST_MULTIARCH):$(LD_LIBRARY_PATH) \
+	    dh_gstscancodecs
+	rm -rf $(CURDIR)/fake-home
+override_dh_shlibdeps:
+	true
