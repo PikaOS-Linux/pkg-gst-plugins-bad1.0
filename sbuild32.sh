@@ -1,7 +1,7 @@
 
 echo 'phase1'
-touch ~/.sbuildrc
-mk-sbuild sid --arch=i386 --debootstrap-include=libeatmydata1
+
+mk-sbuild sid --arch=i386 --debootstrap-include=libeatmydata1 --debootstrap-mirror=http://cdn-fastly.deb.debian.org/debian
 echo 'phase2'
 sbuild -d sid-i386 ./*.dsc
 
