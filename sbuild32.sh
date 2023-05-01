@@ -1,7 +1,8 @@
+sudo apt install -y debian-archive-keyring
 sudo rm -rf /var/cache/apt/
-DIST=sid ARCH=i386 pbuilder create --mirror http://deb.debian.org/debian --distribution sid --architecture i386
+sudo DIST=sid ARCH=i386 MIRROR=http://deb.debian.org/debian pbuilder create --mirror http://deb.debian.org/debian --distribution sid --architecture i386 --keyring=/usr/share/keyrings/debian-archive-keyring.gpg
 echo 'starting build'
-DIST=sid ARCH=i386 pbuilder build ./*.dsc --mirror http://deb.debian.org/debian  --distribution sid --architecture i386
+sudo DIST=sid ARCH=i386 MIRROR=http://deb.debian.org/debian pbuilder build ./*.dsc --mirror http://deb.debian.org/debian  --distribution sid --architecture i386 --keyring=/usr/share/keyrings/debian-archive-keyring.gpg
 
 # Move the debs to outputmkdir -p ./output
 sudo mv ./*.deb ./output/
