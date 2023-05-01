@@ -3,6 +3,7 @@ sudo dpkg --add-architecture i386
 wget -q -O - https://ppa.pika-os.com/key.gpg | sudo apt-key add -
 touch /etc/apt/sources.list.d/pika.list
 echo 'deb https://ppa.pika-os.com/ lunar main' > /etc/apt/sources.list.d/pika.list
+sudo apt update
 #add-apt-repository ppa:pikaos/pika
 #add-apt-repository ppa:kubuntu-ppa/backports
 # Clone Upstream
