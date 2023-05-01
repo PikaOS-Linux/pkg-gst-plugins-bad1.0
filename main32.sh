@@ -15,6 +15,9 @@ cd ./gst-plugins-bad1.0
 
 # Get build deps
 
+apt-get build-dep -y ./
+debuild -S -uc -us
+
 apt-get install -y pbuilder debootstrap devscripts debhelper sbuild debhelper ubuntu-dev-tools piuparts
 
 cd ../
