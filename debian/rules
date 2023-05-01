@@ -60,7 +60,7 @@ endif
 
 # Not available on Ubuntu i386 currently
 ifeq ($(DEB_HOST_ARCH),i386)
-conf_flags += -Ddirectfb=disabled -Dladspa=disabled -Dneon=disabled -Dopenaptx=disabled -Dopenh264=disabled -Dopenni2=disabled -Dqroverlay=disabled -Dopencv=disabled -Dzxing=disabled
+conf_flags += -Ddirectfb=disabled -Dfdkaac=disabled -Dladspa=disabled -Dneon=disabled -Dopenaptx=disabled -Dopenh264=disabled -Dopenni2=disabled -Dqroverlay=disabled -Dopencv=disabled -Dzxing=disabled
 endif
 
 %:
