@@ -98,7 +98,7 @@ override_dh_install:
 	#
 	mkdir -p $(CURDIR)/debian/libgstreamer-opencv1.0-0/usr/lib/$(DEB_HOST_MULTIARCH)/
 	mv $(CURDIR)/debian/tmp/usr/lib/*/libgstopencv-1.0.so.* $(CURDIR)/debian/libgstreamer-opencv1.0-0/usr/lib/$(DEB_HOST_MULTIARCH)/
-	
+	endif
 	
 	#
 	mkdir -p $(CURDIR)/debian/gstreamer1.0-plugins-bad-apps/usr/bin/
