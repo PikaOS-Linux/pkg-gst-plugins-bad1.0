@@ -15,9 +15,6 @@ export DEB_BUILD_OPTIONS=nocheck
 CFLAGS += -Wno-error
 CXXFLAGS += -Wno-error
 LDFLAGS += -Wl,-z,defs -Wl,-O1
-ifeq ($(DEB_HOST_ARCH),i386)
-LDFLAGS += -static
-endif
 
 # Let's decide the package name and url depending on the distribution
 DISTRO = "$(shell dpkg-vendor --query vendor)"
