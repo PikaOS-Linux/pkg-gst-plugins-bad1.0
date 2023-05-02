@@ -1,12 +1,12 @@
 # Add dependent repositories
 wget -q -O - https://ppa.pika-os.com/key.gpg | sudo apt-key add -
 touch /etc/apt/sources.list.d/pika.list
-echo 'deb https://ppa.pika-os.com/ lunar main' > /etc/apt/sources.list.d/pika.list
-echo 'deb http://deb.debian.org/debian/ sid main contrib non-free non-free-firmware' > /etc/apt/sources.list
-echo 'deb-src http://deb.debian.org/debian/ sid main contrib non-free non-free-firmware' >> /etc/apt/sources.list
+#echo 'deb https://ppa.pika-os.com/ lunar main' > /etc/apt/sources.list.d/pika.list
+#echo 'deb http://deb.debian.org/debian/ sid main contrib non-free non-free-firmware' > /etc/apt/sources.list
+#echo 'deb-src http://deb.debian.org/debian/ sid main contrib non-free non-free-firmware' >> /etc/apt/sources.list
 apt update
-#add-apt-repository ppa:pikaos/pika
-#add-apt-repository ppa:kubuntu-ppa/backports
+add-apt-repository ppa:pikaos/pika
+add-apt-repository ppa:kubuntu-ppa/backports
 # Clone Upstream
 wget http://archive.ubuntu.com/ubuntu/pool/universe/g/gst-plugins-bad1.0/gst-plugins-bad1.0_1.22.1.orig.tar.xz
 mkdir -p ./tar-arc
