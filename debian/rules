@@ -144,7 +144,7 @@ override_dh_shlibdeps:
 		debian/gstreamer1.0-plugins-bad/usr/lib/$(DEB_HOST_MULTIARCH) -l\
 		debian/libgstreamer-plugins-bad1.0-0/usr/lib/$(DEB_HOST_MULTIARCH) -l\
 		debian/gstreamer1.0-plugins-bad/usr/lib/$(DEB_HOST_MULTIARCH)/gstreamer-1.0/ -l\
-		debian/libgstreamer-opencv1.0-0/usr/lib/$(DEB_HOST_MULTIARCH) -l$(LD_LIBRARY_PATH)
+		debian/libgstreamer-opencv1.0-0/usr/lib/$(DEB_HOST_MULTIARCH)
 override_dh_girepository:
 	true
 
