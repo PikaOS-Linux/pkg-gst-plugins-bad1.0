@@ -33,9 +33,6 @@ jobs:
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
         if_key_exists: replace
     
-    - name: Fix perms
-      run: chmod 777 ./sbuild32.sh
-    
     - name: Build Package
       run: ./main32.sh
     - name: Release Package
