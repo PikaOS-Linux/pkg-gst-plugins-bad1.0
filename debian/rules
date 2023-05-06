@@ -137,7 +137,22 @@ override_dh_install:
 	    dh_gstscancodecs
 	rm -rf $(CURDIR)/fake-home
 override_dh_shlibdeps:
-	true
+	export LD_LIBRARY_PATH=debian/gstreamer1.0-opencv/usr/lib/$(DEB_HOST_MULTIARCH):\
+		debian/gstreamer1.0-plugins-bad-apps/usr/lib/$(DEB_HOST_MULTIARCH):\
+		debian/gir1.2-gst-plugins-bad-1.0/usr/lib/$(DEB_HOST_MULTIARCH):\
+		debian/libgstreamer-plugins-bad1.0-dev/usr/lib/$(DEB_HOST_MULTIARCH):\
+		debian/gstreamer1.0-plugins-bad/usr/lib/$(DEB_HOST_MULTIARCH):\
+		debian/libgstreamer-plugins-bad1.0-0/usr/lib/$(DEB_HOST_MULTIARCH):\
+		debian/gstreamer1.0-plugins-bad/usr/lib/$(DEB_HOST_MULTIARCH)/gstreamer-1.0/:\
+		debian/libgstreamer-opencv1.0-0/usr/lib/$(DEB_HOST_MULTIARCH):$(LD_LIBRARY_PATH)
+	dh_shlibdeps -a -ldebian/gstreamer1.0-opencv/usr/lib/$(DEB_HOST_MULTIARCH) -l\
+		debian/gstreamer1.0-plugins-bad-apps/usr/lib/$(DEB_HOST_MULTIARCH) -l\
+		debian/gir1.2-gst-plugins-bad-1.0/usr/lib/$(DEB_HOST_MULTIARCH) -l\
+		debian/libgstreamer-plugins-bad1.0-dev/usr/lib/$(DEB_HOST_MULTIARCH) -l\
+		debian/gstreamer1.0-plugins-bad/usr/lib/$(DEB_HOST_MULTIARCH) -l\
+		debian/libgstreamer-plugins-bad1.0-0/usr/lib/$(DEB_HOST_MULTIARCH) -l\
+		debian/gstreamer1.0-plugins-bad/usr/lib/$(DEB_HOST_MULTIARCH)/gstreamer-1.0/ -l\
+		debian/libgstreamer-opencv1.0-0/usr/lib/$(DEB_HOST_MULTIARCH) -l$(LD_LIBRARY_PATH)
 override_dh_girepository:
 	true
 

@@ -15,26 +15,24 @@ cp -rvf ./debian ./gst-plugins-bad1.0/
 cd ./gst-plugins-bad1.0
 
 # Get build deps
-
+ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
+DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata
 apt-get build-dep -y ./
 debuild -S -uc -us
+cd ../
 
 apt-get install -y pbuilder debootstrap devscripts debhelper sbuild debhelper ubuntu-dev-tools piuparts
 
-cd ../
+apt install -y debian-archive-keyring
+cp -rvf ./pbuilderrc /etc/pbuilderrc
+mkdir -p /var/cache/pbuilder/hook.d/
+cp -rvf ./hooks/* /var/cache/pbuilder/hook.d/
+rm -rf /var/cache/apt/
+mkdir -p /pbuilder-results
+DIST=lunar ARCH=i386 pbuilder create --distribution lunar --architecture i386 --debootstrapopts --include=ca-certificates
+echo 'starting build'
+DIST=lunar ARCH=i386 pbuilder build ./*.dsc --distribution lunar --architecture i386 --debootstrapopts --include=ca-certificates
 
-USERNAME=gitboi
-USER_UID=1001
-USER_GID=$USER_UID
-
-CUR_DIR=$(pwd)
-# Create the user
-groupadd --gid $USER_GID $USERNAME \
-    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \
-    && apt-get update \
-    && apt-get install -y sudo \
-    && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
-    && chmod 0440 /etc/sudoers.d/$USERNAME
-groupadd sbuild
-usermod -a -G sbuild gitboi
-su $USERNAME -c ./sbuild32.sh
+# Move the debs to output
+mkdir -p ./output
+mv /var/cache/pbuilder/result/*.deb ./output/ || sudo mv ../*.deb ./output/
