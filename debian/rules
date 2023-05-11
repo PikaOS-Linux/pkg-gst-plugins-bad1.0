@@ -84,10 +84,8 @@ override_dh_makeshlibs:
 	dh_makeshlibs -plibgstreamer-plugins-bad1.0-0 -X "/usr/lib/$(DEB_HOST_MULTIARCH)/gstreamer-1.0" -V 'libgstreamer-plugins-bad1.0-0 (>= $(gst_version))' -- -c4
 	dh_makeshlibs -plibgstreamer-opencv1.0-0 -X "/usr/lib/$(DEB_HOST_MULTIARCH)/gstreamer-1.0" -V 'libgstreamer-opencv1.0-0 (>= $(gst_version))' -- -c4
 override_dh_install:
-	ifneq ($(DEB_HOST_ARCH),i386)
-		dh_install -plibgstreamer-opencv1.0-0 /usr/lib/$(DEB_HOST_MULTIARCH)/libgstopencv-1.0.so.*
-		rm -rf 	$(CURDIR)/debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/libgstopencv-1.0.so.*
-	endif
+	dh_install -plibgstreamer-opencv1.0-0 /usr/lib/$(DEB_HOST_MULTIARCH)/libgstopencv-1.0.so.* || true
+	rm -rf 	$(CURDIR)/debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/libgstopencv-1.0.so.* || true
 	rm -rv $(CURDIR)/debian/tmp/usr/include/gstreamer-1.0/gst/basecamerabinsrc \
 		$(CURDIR)/debian/tmp/usr/include/gstreamer-1.0/gst/interfaces/photography* \
 		$(CURDIR)/debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/libgstbasecamerabinsrc* \
