@@ -1,4 +1,4 @@
-gst-plugins-bad1.0 (1.22.1-1ubuntu1-99pika5) lunar; urgency=medium
+gst-plugins-bad1.0 (1.22.1-1ubuntu1-99pika6.lunar) lunar; urgency=medium
 
   * Add AV1 VAAPI patch
 
